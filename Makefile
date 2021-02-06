@@ -6,25 +6,28 @@
 #    By: agutierr <agutierr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/28 14:36:46 by agutierr          #+#    #+#              #
-#    Updated: 2021/01/28 14:39:34 by agutierr         ###   ########.fr        #
+#    Updated: 2021/02/05 20:00:53 by agutierr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libasm.a
 
-SRCS = ft_strlen.s
+SRCS = ft_strlen.s ft_strcpy.s
 
-OBJS = $(SRCS:.c=.o)
+OBJS = ft_strlen.o ft_strcpy.o
 
 INCLUDES = ./
 
 all:$(NAME)
 
 $(NAME):$(SRCS) libasm.h
-		gcc -Wall -Werror -Wextra -I$(INCLUDES) -c $(SRCS)
+		/Users/agutierr/.brew/bin/nasm -f macho64 ft_strlen.s
+		/Users/agutierr/.brew/bin/nasm -f macho64 ft_strcpy.s
+		gcc main.c $(OBJS)
 		ar rc $(NAME) $(OBJS)
 		ranlib $(NAME)
-
+compile:	fclean all
+		clear && ./a.out
 clean:
 		$(RM) $(OBJS)
 fclean:		clean
