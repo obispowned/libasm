@@ -10,9 +10,9 @@ while:
 	mov		dl, BYTE [rsi + rcx]
 	mov		BYTE [rdi + rcx], dl
 	cmp		dl, 0
-	je		exit
+	je		return
 	jmp		while
 
-exit:
-	mov		rax, rdi
+return:
+	mov		rax, rdi				;SF
 	ret
