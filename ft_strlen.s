@@ -1,7 +1,7 @@
-segment .text
-	global _ft_strlen
+section .text
+	global ft_strlen
 
-_ft_strlen:
+ft_strlen:
 	mov	rax, -1
 	jmp	while
 

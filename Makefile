@@ -12,24 +12,47 @@
 
 NAME = libasm.a
 
-SRCS = ft_strlen.s ft_strcpy.s
+SRCS = $(wildcard *.s)
+OBJS = $(SRCS:%.s=%.o)
 
-OBJS = ft_strlen.o ft_strcpy.o
+FLAGS = -g -Wall -Werror -Wextra
+
+######################################
+detected_OS := $(shell sh -c 'uname 2>/dev/null || echo Unknown')
+ifeq ($(detected_OS), Darwin)
+	LIBASM_FLAG = /Users/agutierr/.brew/bin/nasm -f macho64
+endif
+ifeq ($(detected_OS), Linux)
+	LIBASM_FLAG = nasm -f elf64
+endif
+######################################
 
 INCLUDES = ./
 
+%.o: %.s
+		@echo "\e[35mGenerando binario..."
+		$(LIBASM_FLAG) $^ -o $@
+
 all:$(NAME)
 
-$(NAME):$(SRCS) libasm.h
-		/Users/agutierr/.brew/bin/nasm -f macho64 ft_strlen.s
-		/Users/agutierr/.brew/bin/nasm -f macho64 ft_strcpy.s
-		gcc main.c $(OBJS)
+$(NAME):$(OBJS)
+		@echo "[1;32mGenerando libreria..."
 		ar rc $(NAME) $(OBJS)
-		ranlib $(NAME)
+		gcc $(FLAGS) $(OBJS) main.c
+		@echo "\033[1;32m*********************"
+		@echo "\e[93m***** \e[5mCompilao \e[25m******"
+		@echo "\e[31m*********************"
+		@echo "\033[0m"
+
+
+
 compile:	fclean all
 		clear && ./a.out
+
 clean:
 		$(RM) $(OBJS)
+
 fclean:		clean
 		$(RM) $(NAME)
+
 re:			fclean all

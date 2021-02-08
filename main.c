@@ -10,21 +10,23 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+# include  "libasm.h"
+
 int		main()
 {
-	char buffer[30];
+//	char buffer[30];
 	/*==============================++============================*/
 	/************************** FT_STRLEN *************************/
 	/*==============================++============================*/
 	printf("*** FT_STRLEN ***\n");
-	printf("original: %d\n", strlen("cinco"));
-	printf("mi resultado: %d\n\n", ft_strlen("cinco"));
+	printf("original: %ld\n", strlen("cinco"));
+	printf("mi resultado: %ld\n\n", ft_strlen("cinco"));
 
-	printf("original: %d\n", strlen(""));
-	printf("mi resultado: %d\n\n", ft_strlen(""));
+	printf("original: %ld\n", strlen(""));
+//	printf("mi resultado: %ld\n\n", ft_strlen(""));
 
-	printf("original: %d\n", strlen("ey que pasa, esto es una broma o que_??"));
-	printf("mi resultado: %d\n\n", ft_strlen("ey que pasa, esto es una broma o que_??"));
+	printf("original: %ld\n", strlen("ey que pasa, esto es una broma o que_??"));
+//	printf("mi resultado: %ld\n\n", ft_strlen("ey que pasa, esto es una broma o que_??"));
 
 
 	/*==============================++============================*/
@@ -37,8 +39,8 @@ int		main()
 	printf("original: %s\n", strcpy(buffer, "casco el casco y se la casco en la cascada"));
 	printf("mi resultado: %s\n\n", ft_strcpy(buffer, "casco el casco y se la casco en la cascada"));*/
 
-	printf("original: %s\n", strcpy(buffer, "al"));
-	printf("mi resultado: %s\n\n", ft_strcpy(buffer, "al"));
+//	printf("original: %s\n", strcpy(buffer, "al"));
+//	printf("mi resultado: %s\n\n", ft_strcpy(buffer, "al"));
 	/*==============================++============================*/
 	/************************** FT_STRCMP *************************/
 	/*==============================++============================*/
