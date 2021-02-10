@@ -14,7 +14,7 @@
 
 int		main()
 {
-//	char buffer[30];
+	char buffer[50];
 	/*==============================++============================*/
 	/************************** FT_STRLEN *************************/
 	/*==============================++============================*/
@@ -23,24 +23,24 @@ int		main()
 	printf("mi resultado: %ld\n\n", ft_strlen("cinco"));
 
 	printf("original: %ld\n", strlen(""));
-//	printf("mi resultado: %ld\n\n", ft_strlen(""));
+	printf("mi resultado: %ld\n\n", ft_strlen(""));
 
 	printf("original: %ld\n", strlen("ey que pasa, esto es una broma o que_??"));
-//	printf("mi resultado: %ld\n\n", ft_strlen("ey que pasa, esto es una broma o que_??"));
+	printf("mi resultado: %ld\n\n", ft_strlen("ey que pasa, esto es una broma o que_??"));
 
 
 	/*==============================++============================*/
 	/************************** FT_STRCPY *************************/
 	/*==============================++============================*/
-	printf("*** FT_STRCPY ***\n");
-	/*printf("original: %s\n", strcpy(buffer, "caca"));
+	printf("\n*** FT_STRCPY ***\n");
+	printf("original: %s\n", strcpy(buffer, "caca"));
 	printf("mi resultado: %s\n\n", ft_strcpy(buffer, "caca"));
 
 	printf("original: %s\n", strcpy(buffer, "casco el casco y se la casco en la cascada"));
-	printf("mi resultado: %s\n\n", ft_strcpy(buffer, "casco el casco y se la casco en la cascada"));*/
+	printf("mi resultado: %s\n\n", ft_strcpy(buffer, "casco el casco y se la casco en la cascada"));
 
-//	printf("original: %s\n", strcpy(buffer, "al"));
-//	printf("mi resultado: %s\n\n", ft_strcpy(buffer, "al"));
+	printf("original: %s\n", strcpy(buffer, "al"));
+	printf("mi resultado: %s\n\n", ft_strcpy(buffer, "al"));
 	/*==============================++============================*/
 	/************************** FT_STRCMP *************************/
 	/*==============================++============================*/

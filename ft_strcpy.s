@@ -1,7 +1,7 @@
-segment .text
-	global _ft_strcpy
+section .text
+	global ft_strcpy
 
-_ft_strcpy:
+ft_strcpy:
 	mov	rcx, -1
 	jmp	while
 
