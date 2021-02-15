@@ -33,8 +33,8 @@ int		main()
 	/************************** FT_STRCPY *************************/
 	/*==============================++============================*/
 	printf("\n*** FT_STRCPY ***\n");
-	printf("original: %s\n", strcpy(buffer, "caca"));
-	printf("mi resultado: %s\n\n", ft_strcpy(buffer, "caca"));
+	printf("original: %s\n", strcpy(buffer, "42 school"));
+	printf("mi resultado: %s\n\n", ft_strcpy(buffer, "42 school"));
 
 	printf("original: %s\n", strcpy(buffer, "casco el casco y se la casco en la cascada"));
 	printf("mi resultado: %s\n\n", ft_strcpy(buffer, "casco el casco y se la casco en la cascada"));
@@ -45,6 +45,14 @@ int		main()
 	/************************** FT_STRCMP *************************/
 	/*==============================++============================*/
 	printf("*** FT_STRCMP ***\n");
+	printf("original: %d\n", strcmp("iguales", "iguales"));
+	printf("mi resultado: %d\n\n", ft_strcmp("iguales", "iguales"));
+
+	printf("original: %d\n", strcmp("baja", "alta"));
+	printf("mi resultado: %d\n\n", ft_strcmp("baja", "alta"));
+
+	printf("original: %d\n", strcmp("alta","baja"));
+	printf("mi resultado: %d\n\n", ft_strcmp("alta", "baja"));
 
 	/*==============================++============================*/
 	/*************************** FT_WRITE *************************/
