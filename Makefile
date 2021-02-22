@@ -6,7 +6,7 @@
 #    By: agutierr <agutierr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/28 14:36:46 by agutierr          #+#    #+#              #
-#    Updated: 2021/02/05 20:00:53 by agutierr         ###   ########.fr        #
+#    Updated: 2021/02/22 18:55:32 by agutierr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,7 @@ all:$(NAME)
 $(NAME):$(OBJS)
 		@echo "[1;32mGenerando libreria..."
 		ar rc $(NAME) $(OBJS)
-		gcc $(FLAGS) $(OBJS) main.c
+		gcc $(FLAGS) $(OBJS) main.c -o libasm
 		@echo "\033[1;32m*********************"
 		@echo "\e[93m***** \e[5mCompilao \e[25m******"
 		@echo "\e[31m*********************"
@@ -47,10 +47,11 @@ $(NAME):$(OBJS)
 
 
 compile:	fclean all
-		clear && ./a.out
+		clear && ./libasm
 
 clean:
 		$(RM) $(OBJS)
+		rm libasm
 
 fclean:		clean
 		$(RM) $(NAME)
