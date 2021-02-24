@@ -6,7 +6,7 @@
 /*   By: agutierr <agutierr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/05 18:07:53 by agutierr          #+#    #+#             */
-/*   Updated: 2021/02/22 19:18:30 by agutierr         ###   ########.fr       */
+/*   Updated: 2021/02/24 18:47:45 by agutierr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int		main()
 {
 	char	buffer[137];
-	int		fd;
+
 	/*==============================++============================*/
 	/************************** FT_STRLEN *************************/
 	/*==============================++============================*/
@@ -79,49 +79,33 @@ int		main()
 	/**************************  FT_READ  *************************/
 	/*==============================++============================*/
 	printf("*** FT_READ ***\n");
-	printf("\n================================\n");
-	printf("========== FT_READ =============\n");
-	printf("================================\n\n");
-	printf("-ARCHIVO.TXT TEST1-\n");
+	printf("-ARCHIVO.TXT TEST ORIGINAL-\n");
+	int fd;
+	int ret;
+	char buff1[9000];
 	fd = open("archivo.txt", O_RDONLY);
-	printf("%-20s: \n", "libc-- ");
-	ret = read(fd, buff1, 890);
+	ret = read(fd, buff1, 2);
 	buff1[ret] = 0;
-	printf("[return : %d]\n|%s|\n", ret, buff1);
+	printf("[return : %d][lectura: %s]\n", ret, buff1);
 	printf("\n");
-	close(fd);
-	fd = open("test", O_RDONLY);
-	clear_buffer(buff1, 891);
-	printf("%-20s: \n", "libasm ");
-	ret = ft_read(fd, buff1, 890);
-	buff1[ret] = 0;
-	printf("[return : %d]\n|%s|\n", ret, buff1);
-	printf("\n");
-	clear_buffer(buff1, 891);
-	close(fd);
-	printf("----------WRONG TEST2------------\n");
-	fd = open("wrong", O_RDONLY);
-	printf("%-20s: \n", "libc-- ");
-	ret = read(fd, buff1, 890);
-	buff1[ret] = 0;
-	printf("[return : %d]\n|%s|\n", ret, buff1);
-	printf("\n");
-	close(fd);
-	fd = open("wrong", O_RDONLY);
-	clear_buffer(buff1, 891);
-	printf("%-20s: \n", "libasm ");
-	ret = ft_read(fd, buff1, 890);
-	buff1[ret] = 0;
-	printf("[return : %d]\n|%s|\n", ret, buff1);
-	printf("\n");
-	clear_buffer(buff1, 891);
 	close(fd);
 
-
+	printf("-ARCHIVO.TXT TEST MI RESULTADO-\n");
+	fd = open("archivo.txt", O_RDONLY);
+	ret = ft_read(fd, buff1, 2);
+	buff1[ret] = 0;
+	printf("[return : %d][lectura: %s]\n", ret, buff1);
+	printf("\n");
+	close(fd);
+	
 	/*==============================++============================*/
 	/************************** FT_STRDUP *************************/
 	/*==============================++============================*/
 	printf("*** FT_STRDUP ***\n");
+	char *str = "ey tu";
+	char *str2 = strdup(str);
+	printf("str2 = %s\n", str2);
+	system("leaks libasm");
 	
 	
 

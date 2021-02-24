@@ -6,7 +6,7 @@
 #    By: agutierr <agutierr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/28 14:36:46 by agutierr          #+#    #+#              #
-#    Updated: 2021/02/22 18:55:32 by agutierr         ###   ########.fr        #
+#    Updated: 2021/02/23 15:24:35 by agutierr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,7 +51,6 @@ compile:	fclean all
 
 clean:
 		$(RM) $(OBJS)
-		rm libasm
 
 fclean:		clean
 		$(RM) $(NAME)
