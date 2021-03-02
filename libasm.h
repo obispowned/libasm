@@ -6,7 +6,7 @@
 /*   By: agutierr <agutierr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/28 14:34:12 by agutierr          #+#    #+#             */
-/*   Updated: 2021/02/22 17:09:52 by agutierr         ###   ########.fr       */
+/*   Updated: 2021/03/02 17:11:46 by agutierr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 #include <unistd.h>
 #include <string.h>
 #include <fcntl.h>
+#include <errno.h>
 
 size_t		ft_strlen(const char *str);
 char		*ft_strcpy(char * dst, const char * src);
