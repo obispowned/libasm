@@ -1,9 +1,9 @@
 section .text
 	global _ft_strcpy
-
+;        args:   1RDI 2RSI 3RDX
 _ft_strcpy:
-	mov	rcx, -1
-	jmp	while
+	mov		rcx, -1
+	jmp		while
 
 while:
 	inc		rcx

@@ -6,11 +6,11 @@
 /*   By: agutierr <agutierr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/05 18:07:53 by agutierr          #+#    #+#             */
-/*   Updated: 2021/03/02 18:57:26 by agutierr         ###   ########.fr       */
+/*   Updated: 2021/03/03 20:31:36 by agutierr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include  "libasm.h"
+# include "libasm.h"
 
 int		main()
 {
@@ -136,6 +136,6 @@ int		main()
 	printf("ft_strdup \n|%s|\n\n", ft_strdup(str));
 	
 	system("leaks libasm");
-
+	
 	return(0);
 }

@@ -1,14 +1,16 @@
 section .text
 	global _ft_write
+	extern ___error
 
 _ft_write:                           ;1RDI 2RSI 3RDX
-	cmp			rdi, 0
-	jl			error
 	mov			rax, 0x2000004
 	syscall
-	jc error
+	jc			error
 	ret
 
 error:
-	mov rax, -1
+	push		rax
+	call		___error
+	pop			qword[rax]
+	mov			rax, -1
 	ret
